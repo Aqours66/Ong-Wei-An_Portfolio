@@ -1,0 +1,283 @@
+/* Add styles for the Unique About Me section */
+
+#unique-about {
+    padding: 40px 20px;
+    background: #1f1f1f;
+    color: #fff;
+    text-align: center;
+}
+
+.unique-about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-left-content {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-right-content {
+    flex: 1;
+}
+
+.unique-about-section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e91e63;
+    font-family: "AnimeFont", Arial, sans-serif;
+}
+
+.unique-about-section-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-family: "AnimeFont", Arial, sans-serif;
+}
+
+.unique-about-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.unique-about-nav-item {
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+    color: #e91e63;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.unique-about-nav-item:hover {
+    background-color: #e91e63;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.section-content {
+    display: none;
+    margin-top: 30px;
+    flex: 1 100%;
+}
+
+.open {
+    display: block;
+}
+
+.section-content h3 {
+    font-size: 28px;
+    color: #e91e63;
+    margin-bottom: 10px;
+    font-family: "Arial", sans-serif;
+    /* Use a common sans-serif font for headings */
+}
+
+
+/* Style the section content paragraphs */
+
+.section-content p,
+.section-content ul {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: "Arial", sans-serif;
+    /* Use a common sans-serif font for paragraphs and list items */
+    color: #fff;
+    /* Set the text color to white */
+}
+
+
+/* Style the section content unordered list */
+
+.section-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+
+/* Style the section content list items */
+
+.section-content ul li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.resume-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 1000px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 2px solid #e91e63;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    /* Apply blur effect */
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    /* Safari and older Chrome */
+}
+
+.resume-popup iframe {
+    width: 890px;
+    height: 500px;
+}
+
+.resume-popup .download-button {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e91e63;
+    border: none;
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.resume-popup .download-button:hover {
+    background-color: #c2185b;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 34px;
+    color: #ffffff;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.close-button:hover {
+    color: #e91e63;
+}
+
+
+/* Style for the download button */
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #e91e63;
+    /* Bright red color for the button */
+    border: none;
+    border-radius: 10px;
+    font-family: "Arial", sans-serif;
+    /* Use a standard font */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    /* Remove underline */
+    margin-top: 20px;
+}
+
+
+/* Hover effect for the download button */
+
+.download-button:hover {
+    background-color: #c2185b;
+    /* Slightly darker red on hover */
+}
+
+
+/* Add some animation for a more dynamic effect */
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.unique-skills ul li:hover {
+    color: #e91e63;
+    font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+    .unique-about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .unique-about-section-title {
+        font-size: 28px;
+    }
+    .unique-about-section-description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    #unique-about {
+        padding: 30px 10px;
+    }
+    .unique-about-content {
+        flex-direction: column;
+    }
+    .unique-about-section-title {
+        font-size: 24px;
+    }
+    .unique-about-section-description {
+        font-size: 16px;
+    }
+    .unique-about-nav {
+        margin-bottom: 20px;
+    }
+    .unique-about-nav-item {
+        font-size: 14px;
+        padding: 3px 8px;
+        margin-bottom: 10px;
+    }
+    .section-content {
+        margin-top: 20px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 425px) {
+    .about-left-content,
+    .about-right-content {
+        text-align: center;
+    }
+    .unique-about-section-title {
+        font-size: 20px;
+    }
+    .unique-about-section-description {
+        font-size: 14px;
+    }
+    .unique-about-nav {
+        flex-wrap: wrap;
+    }
+    .unique-about-nav-item {
+        margin: 5px;
+    }
+    .unique-about-content {
+        text-align: center;
+    }
+}

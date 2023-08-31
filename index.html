@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Image/1395.jpg">
+    <title>Ong Wei An - Portfolio</title>
+    <script src="particles.js-master/particles.min.js"></script>
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/divider.css">
+    <link rel="stylesheet" href="css/loading-screen.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <div class="cursor"></div>
+
+    <header class="header">
+        <a href="#home-section" class="header-logo">Ong Wei An</a>
+        <nav class="navbar">
+            <div class="header-burger">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <div class="header-nav">
+                <a href="#home-section">Home</a>
+                <a href="#unique-about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <hr class="divider">
+    <main>
+
+        <section class="home-section">
+            <section id="particles-js"> </section>
+            <div class="home-content">
+                <div class="left-content">
+                    <!-- Use Font Awesome icons for social media -->
+                    <div class="social-media-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h2 class="anime-title fade-in">Hi, I'm Ong Wei An and I'm <span class="role-text"></span><span class="cursor">|</span></h2>
+                    <p class="anime-text fade-in">Hello, I'm Ong Wei An, a passionate Web developer with a strong interest in creating websites. Take a look at my work and feel free to get in touch.</p>
+                    <!-- Call-to-Action (CTA) button below -->
+                    <div class="profile-button-wrapper fade-in">
+                        <a href="#projects" class="cta-button">View Projects</a>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <div class="profile-image">
+                        <img src="Image/1350.jpg" alt="Your Name" class="profile-image">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <hr class="divider">
+
+        <section id="unique-about" class="section unique-about fade-in-up" data-scroll-speed="4">
+            <div class="container">
+                <div class="unique-about-content">
+                    <div class="about-left-content">
+                        <h2 class="unique-about-section-title">About Me</h2>
+                        <p class="unique-about-section-description">I am a passionate and skilled Fullstack Developer with experience in creating visually stunning designs and innovative solutions. My expertise in XYZ allows me to deliver exceptional results that captivate and engage audiences.</p>
+                        <div class="resume-popup-link">
+                            <a href="Image/129.pdf" download class="download-button">Download Resume/CV</a>
+                        </div>
+                    </div>
+                    <div class="about-right-content">
+                        <div class="unique-about-nav">
+                            <!-- Navigation for Skills, Experience, and Credentials -->
+                            <div class="unique-about-nav-item" onclick="showSection('skills-content')">Skills</div>
+                            <div class="unique-about-nav-item" onclick="showSection('experience-content')">Experience</div>
+                            <div class="unique-about-nav-item" onclick="showSection('credentials-content')">Credentials</div>
+                        </div>
+                        <div class="section-content" id="skills-content">
+                            <h3>Skills</h3>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>PHP</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                        <div class="section-content" id="experience-content">
+                            <h3>Experience</h3>
+                            <!-- Add content for Experience section here -->
+                        </div>
+                        <div class="section-content" id="credentials-content">
+                            <h3>Credentials</h3>
+                            <p>Diploma in Information technology, Southern University</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Add the resume popup container outside the unique-about section -->
+        <div class="resume-popup" style="display: none;">
+            <div class="resume-popup-content">
+                <button class="close-button" onclick="closePopup()"><i class="fas fa-times"></i></button>
+                <iframe src="Image/129.pdf" frameborder="0"></iframe>
+                <a href="Image/129.pdf" download class="download-button">Download Resume/CV</a>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <section id="services" class="section services">
+
+            <h2 class="section-title">My Services</h2>
+            <div class="services-content">
+                <div class="service">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Development</h3>
+                    <p>We offer professional web development services to create fast, responsive, and user-friendly websites tailored to your needs.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>We create stunning and intuitive user interfaces that enhance user experience and make your product stand out.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <div>
+            <section id="projects">
+                <h2 class="projects-section-title">My work</h2>
+                <div class="work-list" id="workList">
+                    <div class="work">
+                        <img src="Image/1331.jpg">
+                        <div class="layer">
+                            <h3>My project title</h3>
+                            <p>Description</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="code-button">See Code</a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="Image/1331.jpg">
+                        <div class="layer">
+                            <h3>My project title</h3>
+                            <p>Description</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="code-button">See Code</a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="Image/1350.jpg">
+                        <div class="layer">
+                            <h3>My project title</h3>
+                            <p>Description</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="code-button">See Code</a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="Image/1350.jpg">
+                        <div class="layer">
+                            <h3>My project title</h3>
+                            <p>Description</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="code-button">See Code</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <div id="popupContainer" style="display:none">
+            <div class="popup">
+                <img id="popupImage" src="" alt="Project Image">
+                <div class="popup-content">
+                    <h3 id="popupTitle"></h3>
+                    <p id="popupDescription"></p>
+                    <div class="buttons">
+                        <a id="websiteButton" href="#" class="popup-button">Preview</a>
+                        <a id="githubButton" href="#" class="popup-button">View Code</a>
+                    </div>
+                    <button id="closeButton" class="close-button">&times;</button>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div id="contact" class="section contact">
+            <div class="contact-content">
+                <div class="contact-left">
+                    <h2 class="contact-section-title">Contact Me</h2>
+                    <div class="contact-info">
+                        <p>Email: ongweian1234@gmail.com</p>
+                        <img src="Image/1350.jpg" alt="Profile Picture">
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form id="contactForm" action="https://formsubmit.co/ongweian1234@gmail.com" method="post">
+                        <div class="form-group">
+                            <input type="text" id="name" name="Name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="Message" id="message" rows="6" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="submitButton">Send Message</button>
+                        </div>
+                    </form>
+                    <div id="statusMessage"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <hr class="divider">
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2023 Ong Wei An. All rights reserved.</p>
+            <ul class="footer-social">
+                <li><a href="#" class="social-icon"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#" class="social-icon"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" class="social-icon"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+    <script src="javascript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</body>
+
+</html>

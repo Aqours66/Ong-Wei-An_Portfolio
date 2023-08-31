@@ -1,0 +1,63 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.thank-you-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #e91e63;
+    border-radius: 10px;
+    background-color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.thank-you-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+.thank-you-message {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.thank-you-image {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.thank-you-link {
+    font-size: 18px;
+    color: #e91e63;
+    text-decoration: none;
+}
+
+
+/* Responsive styles */
+
+@media screen and (max-width: 767px) {
+    .thank-you-container {
+        padding: 10px;
+    }
+    .thank-you-title {
+        font-size: 28px;
+    }
+    .thank-you-message {
+        font-size: 18px;
+    }
+    .thank-you-image {
+        max-width: 150px;
+    }
+    .thank-you-link {
+        font-size: 16px;
+    }
+}

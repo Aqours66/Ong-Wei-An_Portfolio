@@ -1,0 +1,318 @@
+    .home-section {
+        padding: 80px 0;
+        background-color: #1f1f1f;
+        /* Dark background color */
+        text-align: center;
+        color: #fff;
+        position: relative;
+        /* White text color */
+    }
+    
+    #particles-js {
+        width: 100%;
+        height: 100%;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* Remove z-index property from #particles-js */
+    }
+    
+    .home-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+        /* Add position: relative to the home-content */
+        z-index: 1;
+        /* Add z-index: 1 to move the .home-content above the particles */
+    }
+    
+    .left-content {
+        flex: 1;
+        text-align: left;
+        margin-right: 20px;
+    }
+    
+    .left-content p {
+        margin-bottom: 20px;
+        /* Add margin between the paragraph and social media icons */
+    }
+    
+    .right-content {
+        flex: 1;
+        max-width: 500px;
+        margin-left: 20px;
+    }
+    
+    .profile-image {
+        width: 500px;
+        /* Adjust width for the oval shape */
+        height: 500px;
+        /* Adjust height for the oval shape */
+        border-radius: 50px 25px;
+        /* Create an oval shape */
+        object-fit: cover;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        /* Add a subtle shadow to the profile image */
+        transition: transform 0.3s ease;
+        padding-left: 10px;
+    }
+    
+    .profile-image img {
+        width: 100%;
+        height: 100%;
+        /* Ensure the image covers the entire container */
+        border-radius: 50px 25px;
+        /* Create an oval shape */
+    }
+    
+    .profile-image:hover {
+        transform: scale(1.05);
+        /* Increase the image size on hover */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        /* Add a slightly stronger shadow on hover */
+    }
+    
+    .home-content h2 {
+        font-size: 48px;
+        /* Increase font size for dramatic effect */
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #e91e63;
+        /* Bright red color for the title */
+    }
+    
+    .home-content p {
+        font-size: 24px;
+        /* Increase font size for better readability */
+        line-height: 1.6;
+        margin: 0;
+        color: #fff;
+        /* White text color */
+    }
+    
+    .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: #b44e8c;
+        /* Dark pink color for the CTA button */
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .cta-button:hover {
+        background-color: #e91e63;
+        transform: scale(1.1);
+    }
+    
+    .social-media-icons {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .social-icon {
+        display: inline-block;
+        margin: 0 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        font-size: 24px;
+        color: #fff;
+        background-color: #641b49;
+        /* Deep red color for social media icons */
+        transition: background-color 0.3s ease;
+    }
+    
+    .social-icon span {
+        display: none;
+    }
+    
+    .social-icon:hover {
+        background-color: #e91e63;
+        transform: scale(1.1);
+    }
+    
+    #facebook-icon {
+        background-color: #8c243b;
+        /* Darker red for Facebook */
+    }
+    
+    #twitter-icon {
+        background-color: #b62333;
+        /* Darker red for Twitter */
+    }
+    
+    #instagram-icon {
+        background-color: #c13549;
+        /* Darker red for Instagram */
+    }
+    
+    .anime-title {
+        font-size: 42px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #e91e63;
+        /* Bright red color for the title */
+    }
+    
+    .anime-text {
+        font-size: 24px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    /* Add this new CSS for the typing animation */
+    
+    .typing-animation {
+        animation: typing 2s steps(40, end), blink-caret 0.5s step-end infinite;
+    }
+    
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+    }
+    
+    @keyframes blink-caret {
+        from,
+        to {
+            border-color: transparent;
+        }
+        50% {
+            border-color: #e91e63;
+        }
+    }
+    /* Responsive styles for laptops and large tablets (screens between 992px and 1200px) */
+    
+    @media screen and (max-width: 1200px) {
+        .home-content {
+            flex-direction: column;
+        }
+        .profile-image {
+            width: 300px;
+            height: 300px;
+        }
+    }
+    /* Responsive styles for tablets (screens between 768px and 991px) */
+    
+    @media screen and (max-width: 991px) {
+        .home-content {
+            padding: 50px 0;
+        }
+        .home-content h2 {
+            font-size: 36px;
+        }
+        .home-content p {
+            font-size: 20px;
+        }
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            margin-top: 20px;
+        }
+        .social-media-icons {
+            margin-bottom: 10px;
+        }
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+        }
+        .anime-title {
+            font-size: 30px;
+        }
+        .anime-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .typing-animation {
+            animation: typing 1.5s steps(30, end), blink-caret 0.5s step-end infinite;
+        }
+        .right-content .profile-image {
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            margin-top: 20px;
+        }
+    }
+    /* Responsive styles for phones and small tablets (screens less than 768px) */
+    
+    @media screen and (max-width: 767px) {
+        .home-content {
+            padding: 30px 0;
+        }
+        .home-content h2 {
+            font-size: 28px;
+        }
+        .home-content p {
+            font-size: 16px;
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+        }
+        .anime-title {
+            font-size: 24px;
+        }
+        .anime-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            font-size: 18px;
+        }
+        .right-content .profile-image {
+            margin-bottom: 40px;
+        }
+        .cta-button {
+            margin-top: 40px;
+        }
+    }
+    /* Responsive styles for Mobile L (screens less than 425px) */
+    
+    @media screen and (max-width: 425px) {
+        /* Increase the margin between the profile image and the button for Mobile L */
+        .profile-button-wrapper {
+            margin-bottom: 60px;
+        }
+    }
+    /* Responsive styles for Mobile M (screens between 375px and 424px) */
+    
+    @media screen and (max-width: 424px) {
+        /* Increase the margin between the profile image and the button for Mobile M */
+        .profile-button-wrapper {
+            margin-bottom: 60px;
+        }
+    }
+    /* Responsive styles for Mobile S (screens less than 375px) */
+    
+    @media screen and (max-width: 375px) {
+        /* Increase the margin between the profile image and the button for Mobile S */
+        .profile-button-wrapper {
+            margin-bottom: 80px;
+        }
+    }

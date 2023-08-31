@@ -1,0 +1,13 @@
+.divider {
+    border: none;
+    height: 6px;
+    background-image: linear-gradient(to right, #e91e63, #b44e8c, #e91e63);
+    /* Gradient of red and pink colors */
+    /* Add some spacing above and below the divider */
+    width: 100%;
+    /* Make the divider span the entire width of the container */
+    border-radius: 10px;
+    /* Add rounded edges to the divider */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow to the divider */
+}
