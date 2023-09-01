@@ -258,6 +258,18 @@
         margin-top: 20px;
         text-align: left;
     }
+    .resume-popup {
+        width: 90%;
+        max-width: 500px;
+    }
+    .resume-popup iframe {
+        width: 100%;
+        height: auto;
+    }
+    .resume-popup .download-button,
+    .close-button {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 425px) {
@@ -279,5 +291,13 @@
     }
     .unique-about-content {
         text-align: center;
+    }
+    .resume-popup {
+        width: 90%;
+        max-width: 350px;
+    }
+    .resume-popup .download-button,
+    .close-button {
+        font-size: 12px;
     }
 }
