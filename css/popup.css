@@ -139,8 +139,8 @@
     
     @media screen and (max-width: 1024px) {
         #popupImage {
-            width: 200px;
-            height: 200px;
+            width: 400px;
+            height: 300px;
         }
         #closeButton {
             font-size: 16px;
@@ -151,10 +151,8 @@
         .popup {
             flex-direction: column;
             align-items: center;
-            width: 500px;
-            /* Adjust the width as needed */
-            height: 600px;
-            /* Adjust the height as needed */
+            width: 300px !important;
+            height: 500px !important;
             padding: 10px !important;
             font-size: 14px !important;
             position: fixed;
@@ -172,8 +170,8 @@
             /* Adjust the button size and font size */
         }
         #popupTitle {
-            font-size: 18px !important;
-            margin-bottom: 10px !important;
+            font-size: 14px !important;
+            margin-bottom: 5px !important;
             display: flex;
             justify-content: center;
             padding-right: 50px;
@@ -183,7 +181,7 @@
             /* Center the title horizontally */
         }
         #popupDescription {
-            font-size: 12px !important;
+            font-size: 9px !important;
             margin-top: 10px !important;
             display: flex;
             justify-content: center;
