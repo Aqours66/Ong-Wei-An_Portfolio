@@ -3,7 +3,7 @@ const roleText = document.querySelector('.role-text');
 
 
 // Array of roles to loop through
-const roles = ['Front-End Developer', 'Back-End Developer'];
+const roles = ['Web Developer', 'UI/UX Designer'];
 
 // Function to start the typing animation
 function startTypingAnimation() {
@@ -307,11 +307,15 @@ document.addEventListener('click', cursorClickAnimation);
 
 document.addEventListener("DOMContentLoaded", function() {
     const projects = [{
-            title: "Project Title 1",
-            description: "This is the description for Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            image: "Image/1331.jpg",
+            title: "Lens Supplier System",
+            description: "A comprehensive e-commerce platform for a fictional lens supplier, providing opticians with an intuitive shopping experience. Designed and implemented a robust admin panel for efficient inventory management, order processing, and customer support.\n\n" +
+                "• Comprehensive Inventory Management: Developed a robust inventory management system within the admin panel, allowing for accurate tracking and efficient management of product stock.\n" +
+                "• Streamlined Order Processing: Designed an efficient admin panel that reduced order processing time by 30%, enhancing operational efficiency.\n" +
+                "• User-Friendly Cart: Designed an intuitive shopping cart that streamlined the purchasing process, resulting in increased conversion rates.\n\n" +
+                "Technologies: HTML, CSS, JavaScript, PHP, MySQL",
+            image: "Image/Project 1.png",
             websiteLink: "https://example.com/project1",
-            githubLink: "https://github.com/user/repo1"
+            githubLink: "https://github.com/Aqours66/Project-FYP",
         },
         {
             title: "Project Title 2",
@@ -344,17 +348,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const githubButton = document.getElementById("githubButton");
 
         websiteButton.href = project.websiteLink;
-        githubButton.href = project.githubLink;
+        githubButton.href = project.githubLink; // Set the correct GitHub link
+
         popupTitle.innerText = project.title;
         popupDescription.innerText = project.description;
         popupImage.src = project.image; // Set the image source
         popupContainer.style.display = "block"; // Show the popup
-    }
-
-    // Function to close the popup when the "Close" button is clicked
-    function handleCloseClick() {
-        const popupContainer = document.getElementById("popupContainer");
-        popupContainer.style.display = "none"; // Hide the popup
     }
 
     // Attach the click event listener to each .work element and store the project index as a data attribute
@@ -364,25 +363,40 @@ document.addEventListener("DOMContentLoaded", function() {
         work.dataset.index = index;
     });
 
+    // Function to close the popup when the "Close" button is clicked
+    function handleCloseClick() {
+        const popupContainer = document.getElementById("popupContainer");
+        popupContainer.style.display = "none"; // Hide the popup
+    }
+
+    // Function to open the project website in a new tab
+    function handleWebsiteButtonClick(event) {
+        event.preventDefault(); // Prevent the default behavior of the link
+        window.open(event.target.href, "_blank"); // Open link in a new tab
+    }
+
+    // Function to open the GitHub repository in a new tab
+    function handleGithubButtonClick(event) {
+        event.preventDefault(); // Prevent the default behavior of the link
+        window.open(event.target.href, "_blank"); // Open link in a new tab
+    }
+
+    // Attach event listeners for the "Preview" and "View Code" buttons
+    const websiteButton = document.getElementById("websiteButton");
+    const githubButton = document.getElementById("githubButton");
+
+    websiteButton.addEventListener("click", handleWebsiteButtonClick);
+    githubButton.addEventListener("click", handleGithubButtonClick);
+
     // Attach the click event listener to the close button of the popup
     const closeButton = document.getElementById("closeButton");
     closeButton.addEventListener("click", handleCloseClick);
-
-    // Function to toggle the visibility of additional projects
-    function toggleAdditionalProjects() {
-        const additionalProjects = document.querySelector(".additional-projects");
-        additionalProjects.classList.toggle("hidden");
-    }
-
-    // Attach the click event listener to the "See More" button
-    const seeMoreButton = document.querySelector(".see-more-button");
-    seeMoreButton.addEventListener("click", toggleAdditionalProjects);
 });
 
 // Function to handle the click event on the work items
 function handleWorkClick(event) {
     const index = event.currentTarget.dataset.index;
-    const project = projects[index];
+    const project = project[index];
 
     // Show the popup with the project details
     const popupContainer = document.getElementById("popupContainer");
