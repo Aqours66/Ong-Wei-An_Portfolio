@@ -151,8 +151,10 @@
         .popup {
             flex-direction: column;
             align-items: center;
-            width: 300px !important;
-            height: 400px !important;
+            width: 500px;
+            /* Adjust the width as needed */
+            height: 600px;
+            /* Adjust the height as needed */
             padding: 10px !important;
             font-size: 14px !important;
             position: fixed;
