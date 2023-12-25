@@ -114,6 +114,30 @@
     position: relative;
 }
 
+
+/* Style the experience items */
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-item h4 {
+    font-size: 20px;
+    color: #e91e63;
+    margin-bottom: 5px;
+}
+
+.experience-duration {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.experience-role {
+    font-size: 18px;
+    color: #fff;
+}
+
 .resume-popup {
     position: fixed;
     top: 50%;

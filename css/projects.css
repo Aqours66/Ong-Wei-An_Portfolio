@@ -24,18 +24,20 @@
 /* Style the work-list container and the individual work items */
 
 .work-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
 }
 
 .work {
+    flex: 0 0 calc(50% - 20px);
+    /* Two items per row, considering the gap */
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transform-style: preserve-3d;
-    /* Preserve 3D transformations for child elements */
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 1s ease, transform 1s ease;
@@ -131,21 +133,29 @@
 /* Style the external link icon */
 
 .layer a {
-    display: inline-block;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
     color: #ffffff;
     font-size: 24px;
     background-color: #ff4444;
-    padding: 8px 12px;
+    padding: 12px 12px;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+}
+
+.layer .code-button {
+    background-color: #e91e63;
+    margin-left: 10px;
 }
 
 
 /* Adjust the icon position */
 
 .layer a i {
-    margin-left: 5px;
+    margin-right: 5px;
+    /* Adjust margin between icon and text */
 }
 
 
@@ -184,11 +194,14 @@
         font-size: 36px;
     }
     .work-list {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        /* Change the column width for smaller screens */
         gap: 15px;
     }
     .work {
-        max-width: 100%;
+        flex: 0 0 calc(100% - 20px);
+        /* One item per row on smaller screens */
+        max-width: none;
     }
     .layer h3 {
         font-size: 20px;
