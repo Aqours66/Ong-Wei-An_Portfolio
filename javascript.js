@@ -318,9 +318,11 @@ document.addEventListener("DOMContentLoaded", function() {
             githubLink: "https://github.com/Aqours66/Project-FYP",
         },
         {
-            title: "Project Title 2",
-            description: "This is the description for Project 2. Vestibulum aliquet lobortis libero at pellentesque.",
-            image: "path/to/project2-image.jpg",
+            title: "Click Game",
+            description: "A Simple Click Game.",
+            image: "Image/Project 2.jpg",
+            websiteLink: "https://aqours66.github.io/Click-Game/",
+            githubLink: "https://github.com/Aqours66/Click-Game",
         },
         {
             title: "Project Title 3",
