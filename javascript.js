@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             title: "Click Game",
             description: "A Simple Click Game.",
-            image: "Image/Project 2.jpg",
+            image: "Image/Project 2.png",
             websiteLink: "https://aqours66.github.io/Click-Game/",
             githubLink: "https://github.com/Aqours66/Click-Game",
         },
