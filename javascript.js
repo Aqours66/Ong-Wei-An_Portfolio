@@ -319,15 +319,19 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             title: "Click Game",
-            description: "A Simple Click Game.",
+            description: "A Simple Click Game.\n" +
+                "Technologies: Html, CSS, JavaScript",
             image: "Image/Project 2.png",
             websiteLink: "https://aqours66.github.io/Click-Game/",
             githubLink: "https://github.com/Aqours66/Click-Game",
         },
         {
-            title: "Project Title 3",
-            description: "This is the description for Project 3. Ut tincidunt felis non purus tristique scelerisque.",
-            image: "path/to/project3-image.jpg",
+            title: "Color-Picker-React",
+            description: "A Simple Color Picker. \n" +
+                "Technologies: React",
+            image: "Image/Project 3.png",
+            websiteLink: "https://color-picker-reacttesting.netlify.app/",
+            githubLink: "https://github.com/Aqours66/Color-Picker-React",
         },
         {
             title: "Project Title 4",
