@@ -334,9 +334,12 @@ document.addEventListener("DOMContentLoaded", function() {
             githubLink: "https://github.com/Aqours66/Color-Picker-React",
         },
         {
-            title: "Project Title 4",
-            description: "This is the description for Project 4. Sed auctor libero in ex iaculis, non egestas tellus dictum.",
-            image: "path/to/project4-image.jpg",
+            title: "Task Manager",
+            description: "A Simple Task Manager. \n" +
+                "Technologies: HTML, CSS, JavaScript",
+            image: "Image/Project 4.png",
+            websiteLink: "https://aqours66.github.io/Task-Management/",
+            githubLink: "https://github.com/Aqours66/Task-Management",
         },
         // Add more projects as needed
     ];
