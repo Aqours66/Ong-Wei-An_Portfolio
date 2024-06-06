@@ -341,6 +341,16 @@ document.addEventListener("DOMContentLoaded", function() {
             websiteLink: "https://aqours66.github.io/Task-Management/",
             githubLink: "https://github.com/Aqours66/Task-Management",
         },
+        {
+            title: "Book Store",
+            description: "User Authentication and Profiles: Developed a secure user authentication system using . Users can create accounts, log in, and manage their profiles, including viewing their purchase history and wishlist. \n" +
+                "Secure Payment Gateway: Integrated with leading payment gateways (e.g., Stripe, PayPal) to ensure secure and seamless transactions. The checkout process is streamlined for user convenience.\n" +
+                "Admin Dashboard: Built an admin dashboard for managing inventory, orders, users, and reviews. The dashboard includes analytics and reporting tools to help administrators make informed decisions.\n" +
+                "Technologies: HTML, CSS, JavaScript, PHP, MYSQL",
+            image: "Image/Project 5.png",
+            websiteLink: "",
+            githubLink: "https://github.com/Aqours66/book-store",
+        },
         // Add more projects as needed
     ];
 
