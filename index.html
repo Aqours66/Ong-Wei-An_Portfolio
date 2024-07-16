@@ -6,16 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="Image/Logo.jpg">
     <title>Ong Wei An - Portfolio</title>
-    <meta name="description" content="I'm Ong Wei An, a passionate Fullstack Developer skilled in HTML, CSS, JavaScript, PHP, and MySQL. I create visually stunning websites with a focus on user experience. Explore my projects and get in touch to bring your ideas to life.">
-    <meta name="keywords" content="web development, portfolio, projects, services, web developer, website develpoment, UI/UX Design">
-    <meta name="author" content="Ong Wei An">
-    <meta name="robots" content="index, follow">
-    <!-- Allow search engines to index and follow links -->
-    <meta name="googlebot" content="index, follow">
-    <meta name="og:title" content="Ong Wei An - Portfolio">
-    <meta name="og:description" content="I'm Ong Wei An, a passionate Fullstack Developer skilled in HTML, CSS, JavaScript, PHP, and MySQL. I create visually stunning websites with a focus on user experience. Explore my projects and get in touch to bring your ideas to life.">
-    <meta name="og:url" content="https://aqours66.github.io/Ong-Wei-An_Portfolio/">
-    <!-- URL of your website -->
+
     <script src="particles.js-master/particles.min.js"></script>
     <link rel="stylesheet" href="css/cursor.css">
     <link rel="stylesheet" href="css/popup.css">
@@ -137,14 +128,14 @@
             </div>
         </section>
 
-        <!-- Add the resume popup container outside the unique-about section -->
         <div class="resume-popup" style="display: none;">
             <div class="resume-popup-content">
-                <button class="close-button" onclick="closePopup()"><i class="fas fa-times"></i></button>
+                <button class="close-button" id="closeResumePopup"><i class="fas fa-times"></i></button>
                 <iframe src="Image/Ong Wei An- Resume .pdf" frameborder="0"></iframe>
                 <a href="Image/Ong Wei An- Resume .pdf" download class="download-button">Download Resume</a>
             </div>
         </div>
+
 
         <hr class="divider">
 
@@ -171,6 +162,7 @@
         <div>
             <section id="projects">
                 <h2 class="projects-section-title">My work</h2>
+
                 <div class="work-list" id="workList">
                     <div class="work">
                         <img src="Image/Project 1.png" alt="Project Image">
@@ -188,8 +180,17 @@
                             <h3>Book Store</h3>
                             <p>Project Summary: This online bookshop project showcases my ability to design and develop a fully functional e-commerce website tailored for book enthusiasts. The platform is built to provide a seamless user experience while
                                 incorporating modern web development technologies and best practices.</p>
-                            <a href="" aria-label="Project Website"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" aria-label="Project Website"><i class="fas fa-external-link-alt"></i></a>
                             <a href="https://github.com/Aqours66/book-store" class="code-button">View Code</a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="Image/Project 7.png" alt="Project Image">
+                        <div class="layer">
+                            <h3>React Chat App</h3>
+                            <p>A Real Time Chat App using React</p>
+                            <a href="#" aria-label="Project Website"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/Aqours66/ReactChatApp" class="code-button">View Code</a>
                         </div>
                     </div>
                     <div class="work">
@@ -230,8 +231,15 @@
                     </div>
 
                 </div>
+
+                <div class="pagination">
+                    <button id="prevPage">Previous</button>
+                    <button id="nextPage">Next</button>
+                </div>
+
             </section>
         </div>
+
 
         <div id="popupContainer" style="display:none">
             <div class="popup">

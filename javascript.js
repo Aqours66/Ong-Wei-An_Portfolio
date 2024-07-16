@@ -1,13 +1,49 @@
-// Get the element containing the role text and the cursor
+document.addEventListener('DOMContentLoaded', function() {
+    const itemsPerPage = 6; // Number of items per page (changed to 6)
+    let currentPage = 1; // Current page
+    const projects = document.querySelectorAll('.work'); // Select all project items
+
+    function showPage(page) {
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+
+        projects.forEach((project, index) => {
+            if (index >= startIndex && index < endIndex) {
+                project.style.display = 'block';
+            } else {
+                project.style.display = 'none';
+            }
+        });
+    }
+
+    function goToNextPage() {
+        currentPage++;
+        if (currentPage > Math.ceil(projects.length / itemsPerPage)) {
+            currentPage = Math.ceil(projects.length / itemsPerPage);
+        }
+        showPage(currentPage);
+    }
+
+    function goToPrevPage() {
+        currentPage--;
+        if (currentPage < 1) {
+            currentPage = 1;
+        }
+        showPage(currentPage);
+    }
+
+    // Initial page load
+    showPage(currentPage);
+
+    // Pagination button event listeners
+    document.getElementById('nextPage').addEventListener('click', goToNextPage);
+    document.getElementById('prevPage').addEventListener('click', goToPrevPage);
+});
+// Typing animation for role text
 const roleText = document.querySelector('.role-text');
-
-
-// Array of roles to loop through
 const roles = ['Web Developer', 'UI/UX Designer'];
 
-// Function to start the typing animation
 function startTypingAnimation() {
-
     let currentRoleIndex = 0;
     let currentRole = roles[currentRoleIndex];
     let currentCharIndex = 0;
@@ -18,53 +54,35 @@ function startTypingAnimation() {
             currentCharIndex++;
             setTimeout(typeNextChar, 100);
         } else {
-            // Text typing animation finished, wait for a pause and then clear the text
             setTimeout(() => {
                 currentCharIndex = 0;
                 roleText.textContent = '';
                 currentRoleIndex = (currentRoleIndex + 1) % roles.length;
                 currentRole = roles[currentRoleIndex];
-                setTimeout(typeNextChar, 500); // Pause before typing the next text
-            }, 1500); // Time to wait before clearing the text (1500 milliseconds = 1.5 seconds)
+                setTimeout(typeNextChar, 500);
+            }, 1500);
         }
     }
 
     typeNextChar();
 }
 
-// Start the typing animation when the page loads
-startTypingAnimation();
-
-
-
-function showSection(sectionId) {
-    const allSections = document.querySelectorAll('.section-content');
-    for (let i = 0; i < allSections.length; i++) {
-        allSections[i].classList.remove('open');
-    }
-
-    const selectedSection = document.getElementById(sectionId);
-    selectedSection.classList.add('open');
-}
-
-
 // Smooth scrolling function
 function smoothScroll(target, duration) {
-    var targetElement = document.querySelector(target);
-    var targetPosition = targetElement.getBoundingClientRect().top;
-    var startPosition = window.pageYOffset;
-    var distance = targetPosition - startPosition;
-    var startTime = null;
+    const targetElement = document.querySelector(target);
+    const targetPosition = targetElement.getBoundingClientRect().top;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
 
     function animation(currentTime) {
         if (startTime === null) startTime = currentTime;
-        var timeElapsed = currentTime - startTime;
-        var scrollAmount = ease(timeElapsed, startPosition, distance, duration);
+        const timeElapsed = currentTime - startTime;
+        const scrollAmount = ease(timeElapsed, startPosition, distance, duration);
         window.scrollTo(0, scrollAmount);
         if (timeElapsed < duration) requestAnimationFrame(animation);
     }
 
-    // Easing function for smooth animation
     function ease(t, b, c, d) {
         t /= d / 2;
         if (t < 1) return (c / 2) * t * t + b;
@@ -75,29 +93,24 @@ function smoothScroll(target, duration) {
     requestAnimationFrame(animation);
 }
 
-// Add smooth scrolling behavior to anchor links
-var anchorLinks = document.querySelectorAll('a[href^="#"]');
-anchorLinks.forEach(function(link) {
-    link.addEventListener('click', function(e) {
+// Adding smooth scrolling behavior to anchor links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
         e.preventDefault();
-        var target = this.getAttribute('href');
-        var duration = 1000; // Set the desired duration for smooth scrolling (in milliseconds)
-        smoothScroll(target, duration);
+        const target = link.getAttribute('href');
+        smoothScroll(target, 1000); // Adjust duration as needed
     });
 });
 
-
-
+// Burger menu toggle
 const burger = document.querySelector('.header-burger');
 const nav = document.querySelector('.header-nav');
-
 burger.addEventListener('click', () => {
     nav.classList.toggle('open');
 });
 
-
+// Intersection observer for fade-in effect
 const fadeIns = document.querySelectorAll('.fade-in');
-
 const fadeInObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -106,13 +119,11 @@ const fadeInObserver = new IntersectionObserver(entries => {
         }
     });
 });
-
 fadeIns.forEach(item => {
     fadeInObserver.observe(item);
 });
 
-
-// Initialize particles
+// Particle animation initialization
 particlesJS("particles-js", {
     particles: {
         number: {
@@ -220,22 +231,20 @@ particlesJS("particles-js", {
             },
         },
     },
-    retina_detect: true,
+    retina_detect: true
 });
 
-
+// Custom cursor functionality
 const cursor = document.querySelector('.cursor');
 let isMouseStopped = false;
 let mouseStoppedTimer;
 let isCursorVisible = false;
 
-// Update cursor position
 function updateCursorPosition(event) {
     cursor.style.left = event.clientX + 'px';
     cursor.style.top = event.clientY + 'px';
 }
 
-// Custom cursor animation handler
 function customCursorHandler(event) {
     if (!isCursorVisible) {
         isCursorVisible = true;
@@ -245,52 +254,40 @@ function customCursorHandler(event) {
     updateCursorPosition(event);
 
     if (!isMouseStopped) {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)'; // Custom animation when mouse moves
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
         clearTimeout(mouseStoppedTimer);
         isMouseStopped = true;
     }
 
     mouseStoppedTimer = setTimeout(() => {
         isMouseStopped = false;
-        cursor.style.transform = 'translate(-50%, -50%) scale(1)'; // Custom animation when mouse stops
-    }, 100); // You can adjust the time (in milliseconds) for considering the mouse stopped
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    }, 100);
 
     cursorInteractionFeedback();
 }
 
-// Function to hide cursor after some idle time
-function hideCursor() {
-    cursor.style.opacity = '0';
-    isCursorVisible = false;
-}
-
-// Custom animation for cursor click
 function cursorClickAnimation() {
-    cursor.style.transform = 'translate(-50%, -50%) scale(0.8)'; // Scale down on click
+    cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
     setTimeout(() => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)'; // Restore to normal size after click
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
     }, 100);
 }
 
 function cursorInteractionFeedback() {
-    const clickableElements = document.querySelectorAll('a, button, [role="button"]');
-    clickableElements.forEach((element) => {
+    document.querySelectorAll('a, button, [role="button"]').forEach(element => {
         element.addEventListener('mouseover', () => {
-            cursor.style.borderColor = '#00ff00'; // Change border color on hover
+            cursor.style.borderColor = '#00ff00';
         });
         element.addEventListener('mouseout', () => {
-            cursor.style.borderColor = '#ff3333'; // Restore border color after hover
+            cursor.style.borderColor = '#ff3333';
         });
     });
 }
 
-
-// Add the custom cursor event listener and position correction when the page loads
-document.addEventListener('mousemove', (event) => {
+document.addEventListener('mousemove', event => {
     customCursorHandler(event);
-    requestAnimationFrame(hideCursor); // Throttle cursor visibility with requestAnimationFrame
-
-    // Correct the cursor position when scrolling
+    requestAnimationFrame(() => cursor.style.opacity = '0');
     const scrollX = window.scrollX || window.pageXOffset;
     const scrollY = window.scrollY || window.pageYOffset;
     updateCursorPosition({
@@ -299,13 +296,10 @@ document.addEventListener('mousemove', (event) => {
     });
 });
 
-
-
-// Add click event listener to trigger cursor click animation
 document.addEventListener('click', cursorClickAnimation);
 
-
-document.addEventListener("DOMContentLoaded", function() {
+// Project popup functionality
+document.addEventListener('DOMContentLoaded', () => {
     const projects = [{
             title: "Lens Supplier System",
             description: "A comprehensive e-commerce platform for a fictional lens supplier, providing opticians with an intuitive shopping experience. Designed and implemented a robust admin panel for efficient inventory management, order processing, and customer support.\n\n" +
@@ -326,6 +320,19 @@ document.addEventListener("DOMContentLoaded", function() {
             image: "Image/Project 5.png",
             websiteLink: "",
             githubLink: "https://github.com/Aqours66/book-store",
+        },
+        {
+            title: "React Chat App",
+            description: "Technology: Built with React, styled with CSS, and powered by Firebase.  \n" +
+                "Features:\n" +
+                "User registration and login.\n" +
+                "Real-time chat with multiple users.\n" +
+                "Ability to add and block users.\n" +
+                "Secure logout functionality.\n" +
+                " Purpose: Facilitates seamless and secure communication, ideal for both personal and professional use cases.",
+            image: "Image/Project 7.png",
+            websiteLink: "https://example.com/newproject",
+            githubLink: "https://github.com/Aqours66/ReactChatApp",
         },
         {
             title: "Click Game",
@@ -360,14 +367,19 @@ document.addEventListener("DOMContentLoaded", function() {
             websiteLink: "https://aqours66.github.io/Qr-code-generator/",
             githubLink: "https://github.com/Aqours66/Qr-code-generator",
         },
+
         // Add more projects as needed
+
+
     ];
+
+
+
+
 
     function handleWorkClick(event) {
         const index = event.currentTarget.dataset.index;
         const project = projects[index];
-
-        // Show the popup with the project details
         const popupContainer = document.getElementById("popupContainer");
         const popupTitle = document.getElementById("popupTitle");
         const popupImage = document.getElementById("popupImage");
@@ -376,144 +388,71 @@ document.addEventListener("DOMContentLoaded", function() {
         const githubButton = document.getElementById("githubButton");
 
         websiteButton.href = project.websiteLink;
-        githubButton.href = project.githubLink; // Set the correct GitHub link
+        githubButton.href = project.githubLink;
 
         popupTitle.innerText = project.title;
         popupDescription.innerText = project.description;
-        popupImage.src = project.image; // Set the image source
-        popupContainer.style.display = "block"; // Show the popup
+        popupImage.src = project.image;
+        popupContainer.style.display = "block";
     }
 
-    // Attach the click event listener to each .work element and store the project index as a data attribute
-    const workItems = document.querySelectorAll(".work");
-    workItems.forEach((work, index) => {
+    function handleCloseClick() {
+        document.getElementById("popupContainer").style.display = "none";
+    }
+
+    document.querySelectorAll(".work").forEach((work, index) => {
         work.addEventListener("click", handleWorkClick);
         work.dataset.index = index;
     });
 
-    // Function to close the popup when the "Close" button is clicked
-    function handleCloseClick() {
-        const popupContainer = document.getElementById("popupContainer");
-        popupContainer.style.display = "none"; // Hide the popup
-    }
-
-    // Function to open the project website in a new tab
-    function handleWebsiteButtonClick(event) {
-        event.preventDefault(); // Prevent the default behavior of the link
-        window.open(event.target.href, "_blank"); // Open link in a new tab
-    }
-
-    // Function to open the GitHub repository in a new tab
-    function handleGithubButtonClick(event) {
-        event.preventDefault(); // Prevent the default behavior of the link
-        window.open(event.target.href, "_blank"); // Open link in a new tab
-    }
-
-    // Attach event listeners for the "Preview" and "View Code" buttons
-    const websiteButton = document.getElementById("websiteButton");
-    const githubButton = document.getElementById("githubButton");
-
-    websiteButton.addEventListener("click", handleWebsiteButtonClick);
-    githubButton.addEventListener("click", handleGithubButtonClick);
-
-    // Attach the click event listener to the close button of the popup
-    const closeButton = document.getElementById("closeButton");
-    closeButton.addEventListener("click", handleCloseClick);
+    document.getElementById("closeButton").addEventListener("click", handleCloseClick);
 });
 
-// Function to handle the click event on the work items
-function handleWorkClick(event) {
-    const index = event.currentTarget.dataset.index;
-    const project = project[index];
-
-    // Show the popup with the project details
-    const popupContainer = document.getElementById("popupContainer");
-    const popupTitle = document.getElementById("popupTitle");
-    const popupDescription = document.getElementById("popupDescription");
-
-    popupTitle.innerText = project.title;
-    popupDescription.innerText = project.description;
-    popupContainer.style.display = "block";
-}
-
-// Function to close the popup when the "Close" button is clicked
-function handleCloseClick() {
-    const popupContainer = document.getElementById("popupContainer");
-    popupContainer.style.display = "none"; // Hide the popup
-}
-
-// Attach the click event listener to each .work element and store the project index as a data attribute
+// Intersection observer for work items
 const workItems = document.querySelectorAll(".work");
-workItems.forEach((work, index) => {
-    work.addEventListener("click", handleWorkClick);
-    work.dataset.index = index;
-});
-
-// Attach the click event listener to the close button of the popup
-const closeButton = document.getElementById("closeButton");
-closeButton.addEventListener("click", handleCloseClick);
-
-// Function to handle the intersection of work items with the viewport
-function handleIntersection(entries, observer) {
+const workObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add("animate-in");
             observer.unobserve(entry.target);
         }
     });
-}
-
-
-// Create an Intersection Observer instance
-const workObserver = new IntersectionObserver(handleIntersection, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.2 // Adjust this threshold value based on your preference
-});
-
-// Observe each .work element
+}, { threshold: 0.2 });
 workItems.forEach(work => {
     workObserver.observe(work);
 });
-
-// Trigger the handleIntersection function once on page load to check if any work items are already in view
 workObserver.observe(workItems[0]);
 
-
-// JavaScript code to handle popup appearance
+// Popup appearance based on intersection
 const popupContainer = document.getElementById("popupContainer");
-
-const popupObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                popupContainer.classList.add("popup-appear");
-            }
-        });
-    }, { threshold: 0.2 } // Adjust the threshold as needed
-);
-
+const popupObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            popupContainer.classList.add("popup-appear");
+        }
+    });
+}, { threshold: 0.2 });
 popupObserver.observe(popupContainer);
 
-const downloadButton = document.querySelector('.download-button');
-const resumePopup = document.querySelector('.resume-popup');
-
-downloadButton.addEventListener('click', function(event) {
+// Download resume popup
+document.querySelector('.download-button').addEventListener('click', event => {
     event.preventDefault();
-    resumePopup.style.display = 'block';
+    document.querySelector('.resume-popup').style.display = 'block';
 });
 
-// JavaScript code for the close button functionality
-const popup = document.querySelector('.resume-popup');
+// Close button functionality for resume popup
+document.querySelector('.resume-popup .close-button').addEventListener('click', () => {
+    document.querySelector('.resume-popup').style.display = 'none';
+});
 
-function openPopup() {
-    popup.style.display = 'block';
-}
+// Function to open project website in new tab
+document.getElementById("websiteButton").addEventListener("click", event => {
+    event.preventDefault();
+    window.open(event.target.href, "_blank");
+});
 
-function closePopup() {
-    popup.style.display = 'none';
-}
-
-// Attach the openPopup function to the "Download Resume/CV" link outside the popup
-const resumeLink = document.querySelector('.download-button');
-resumeLink.addEventListener('click', openPopup);
+// Function to open GitHub repository in new tab
+document.getElementById("githubButton").addEventListener("click", event => {
+    event.preventDefault();
+    window.open(event.target.href, "_blank");
+});
