@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('nextPage').addEventListener('click', goToNextPage);
     document.getElementById('prevPage').addEventListener('click', goToPrevPage);
 });
+
+
 // Typing animation for role text
 const roleText = document.querySelector('.role-text');
 const roles = ['Web Developer', 'UI/UX Designer'];
@@ -455,4 +457,26 @@ document.getElementById("websiteButton").addEventListener("click", event => {
 document.getElementById("githubButton").addEventListener("click", event => {
     event.preventDefault();
     window.open(event.target.href, "_blank");
+});
+
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section-content');
+    sections.forEach(section => {
+        if (section.id === sectionId) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
+    });
+}
+
+// Initially show the Skills section
+showSection('skills-content');
+
+// Add event listeners for the navigation items
+const navItems = document.querySelectorAll('.unique-about-nav-item');
+navItems.forEach(item => {
+    item.addEventListener('click', function() {
+        showSection(this.getAttribute('onclick').replace('showSection(\'', '').replace('\')', ''));
+    });
 });
